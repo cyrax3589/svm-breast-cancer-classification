@@ -69,3 +69,18 @@ The final tuned model (including scaler and SVM) is saved as:
 
 ``` bash
 svm_breast_cancer_model.pkl
+```
+
+---
+
+## What I Learned
+
+While working with SVM, I learned that the margin is the gap between the decision boundary and the nearest data points from each class. These nearest points are called support vectors, and the main goal of SVM is to maximize this margin so the model can generalize better on unseen data.
+
+I also understood the difference between linear and RBF kernels. A linear kernel works well when the data can be separated using a straight line or flat plane. It is simpler and faster. The RBF kernel, on the other hand, is useful when the data is more complex and not linearly separable, as it allows the model to create non-linear decision boundaries.
+
+The C parameter helped me understand the balance between accuracy and generalization. A smaller C allows the model to tolerate some misclassifications in order to keep a wider margin, while a larger C tries to classify every training point correctly, which can sometimes lead to overfitting.
+
+Gamma plays an important role in how flexible the decision boundary is when using the RBF kernel. A lower gamma value results in smoother boundaries with broader influence from each data point, while a higher gamma focuses more tightly on individual points and can capture complex patterns but may overfit.
+
+Finally, I learned why feature scaling is necessary for SVM. Since SVM depends on distance calculations, features with larger numerical ranges can dominate the model if scaling is not applied. Standardizing the data ensures that all features contribute equally to the decision process.
